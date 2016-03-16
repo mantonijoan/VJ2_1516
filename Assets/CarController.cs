@@ -27,12 +27,12 @@ public class CarController : MonoBehaviour {
         transform.Translate(0.0f, 0.0f, aZ);
         transform.Rotate(0.0f, aR, 0.0f);
 
-        if (Input.GetKeyDown(KeyCode.Keypad1))
+        if (Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1))
         {
             camIso.enabled = true;
             camFirst.enabled = false;
         }
-        else if (Input.GetKeyDown(KeyCode.Keypad2))
+        else if (Input.GetKeyDown(KeyCode.Keypad2) || Input.GetKeyDown(KeyCode.Alpha2))
         {
             camIso.enabled = false;
             camFirst.enabled = true;
