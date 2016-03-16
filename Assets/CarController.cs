@@ -3,12 +3,17 @@ using System.Collections;
 
 public class CarController : MonoBehaviour {
 
+    public Camera camIso;
+    public Camera camFirst;
+
     float _velocity = 10.0f;
     float _angularVelocity = 100.0f;
 
 	// Use this for initialization
 	void Start () {
-	
+        // By default activate camIso
+        camIso.enabled = true;
+        camFirst.enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -21,5 +26,16 @@ public class CarController : MonoBehaviour {
         
         transform.Translate(0.0f, 0.0f, aZ);
         transform.Rotate(0.0f, aR, 0.0f);
-	}
+
+        if (Input.GetKeyDown(KeyCode.Keypad1))
+        {
+            camIso.enabled = true;
+            camFirst.enabled = false;
+        }
+        else if (Input.GetKeyDown(KeyCode.Keypad2))
+        {
+            camIso.enabled = false;
+            camFirst.enabled = true;
+        }
+    }
 }
